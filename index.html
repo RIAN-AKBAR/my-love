@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌷 for my valentine · plantine aesthetic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fce4e8 0%, #ffe9f0 100%);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        /* soft floral pattern */
+        body::before {
+            content: "🌸🌼🌷🌱";
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            font-size: 2.8rem;
+            color: rgba(255, 200, 220, 0.25);
+            white-space: nowrap;
+            pointer-events: none;
+            letter-spacing: 30px;
+            transform: rotate(-2deg);
+            z-index: 0;
+        }
+
+        .card {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 48px 48px 48px 48px;
+            box-shadow: 0 20px 40px rgba(230, 120, 140, 0.15),
+                        0 4px 12px rgba(255, 190, 200, 0.4),
+                        inset 0 1px 4px rgba(255, 255, 255, 0.8);
+            padding: 2.2rem 2rem 2.5rem 2rem;
+            border: 2px solid rgba(255, 245, 245, 0.7);
+            position: relative;
+            z-index: 5;
+            transition: all 0.2s ease;
+        }
+
+        /* tiny sparkle */
+        .card::after {
+            content: "✨";
+            font-size: 2rem;
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            opacity: 0.3;
+            transform: rotate(10deg);
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: #ac5f6b;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 0 #ffd9e2;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        h1 span {
+            font-size: 2.6rem;
+        }
+
+        .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #b37b84;
+            background: #ffeaeecc;
+            width: fit-content;
+            margin: 0 auto 2rem auto;
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            backdrop-filter: blur(2px);
+            border: 1px solid #ffccd5;
+            box-shadow: 0 2px 6px #ffdae2;
+        }
+
+        /* foto estetik ala pinterest / tumblr */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.3rem;
+            justify-content: center;
+            margin: 2.5rem 0 2.8rem 0;
+        }
+
+        .photo {
+            flex: 0 1 calc(50% - 0.7rem);
+            min-width: 160px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 15px 25px #efc2cd, 0 6px 0 #f2b6c3;
+            border: 3px solid white;
+            transition: 0.25s ease;
+            background: #ffeef2;
+            aspect-ratio: 1 / 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+            filter: brightness(1.02) contrast(1.02) saturate(1.1);
+        }
+
+        .photo:hover img {
+            transform: scale(1.06);
+        }
+
+        .photo::before {
+            content: "📸";
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            font-size: 1.8rem;
+            opacity: 0.5;
+            filter: drop-shadow(2px 2px 4px white);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* fallback text kalo gambar ga muncul — tetap estetik */
+        .photo::after {
+            content: "🌸";
+            font-size: 2.2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffb7c5;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .photo img {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* kata kata gombal */
+        .cheesy-section {
+            background: rgba(255, 240, 245, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 58px 58px 38px 38px;
+            padding: 1.6rem 1.8rem;
+            border: 2px dashed #feb4c2;
+            margin: 1.8rem 0 1.2rem 0;
+            box-shadow: inset 0 0 0 4px #fff4f7, 0 8px 0 #f5bac8;
+        }
+
+        .cheesy-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #a5485a;
+            margin-bottom: 1rem;
+            background: #fff0f3d0;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            width: fit-content;
+            border: 1px solid #ffb7c5;
+        }
+
+        .gombal-list {
+            list-style: none;
+        }
+
+        .gombal-list li {
+            font-size: 1.25rem;
+            padding: 0.8rem 1rem 0.8rem 2.4rem;
+            background: white;
+            border-radius: 70px;
+            margin-bottom: 0.9rem;
+            box-shadow: 0 3px 0 #fec7d2, 0 5px 12px #fcd3dc;
+            color: #5d3a41;
+            font-weight: 350;
+            position: relative;
+            border: 1px solid #ffeef2;
+            backdrop-filter: blur(2px);
+            transition: 0.15s linear;
+        }
+
+        .gombal-list li:hover {
+            background: #fff9fb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 #fbb7c6, 0 9px 16px #fbc1cd;
+        }
+
+        .gombal-list li::before {
+            content: "💌";
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            font-size: 1.4rem;
+            filter: drop-shadow(0 2px 2px #ffd0d8);
+        }
+
+        /* special one */
+        .gombal-list li:last-child::before {
+            content: "💘";
+        }
+
+        /* footer estetik */
+        .footer-note {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1.8rem;
+            color: #c06d7c;
+            font-size: 1rem;
+            background: #ffdee6aa;
+            padding: 0.8rem 1.6rem;
+            border-radius: 110px;
+            border: 1px solid #ffb0c0;
+        }
+
+        .footer-note p {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .heart-beat {
+            color: #d43f5c;
+            animation: beat 1s infinite;
+            display: inline-block;
+            font-size: 1.3rem;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); text-shadow: 0 0 8px #ffa5b9; }
+        }
+
+        /* buat mobile tetep cantik */
+        @media (max-width: 450px) {
+            .card { padding: 1.5rem 1.2rem; }
+            h1 { font-size: 1.8rem; }
+            .photo { flex: 1 1 100%; }
+            .gombal-list li { font-size: 1.1rem; }
+        }
+
+        /* tambahan aksen */
+        .floating-rose {
+            position: absolute;
+            font-size: 2rem;
+            bottom: 10px;
+            left: 15px;
+            opacity: 0.3;
+            z-index: 1;
+            rotate: -10deg;
+        }
+
+        .floating-rose2 {
+            top: 15px;
+            right: 25px;
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.3;
+            transform: rotate(25deg);
+            z-index: 1;
+        }
+    </style>
+    <!-- fonts biar makin aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-rose">🌹🌸🌼</div>
+    <div class="floating-rose2">🌷🌱💐</div>
+
+    <main class="card">
+        <h1>
+            <span>🌷</span> happy plantine <span>🌷</span>
+        </h1>
+        <div class="sub">🌸 for you, my pretty girl next door 🌸</div>
+
+        <!-- ========== INI TEMPAT FOTO SI CEWE ========== -->
+        <!-- GANTI URL_FOTO_KAMU_1,2,3,4 DENGAN LINK FOTO YANG MAU DIPAKAI -->
+        <div class="gallery">
+            <div class="photo">
+                <img src="gambar1.png" alt="foto" loading="lazy">
+            </div>
+            <div class="photo">
+                <img src="gambar2.png" alt="foto" loading="lazy">
+            </div>
+            <div class="photo">
+                <img src="gambar3.png" alt="foto" loading="lazy">
+            </div>
+            <div class="photo">
+                <img src="gambar4.png" alt="foto" loading="lazy">
+            </div>
+        </div>
+        <!-- ========== SAMPAI SINI ========== -->
+
+        <!-- kata kata gombal ala plantine / valentine -->
+        <div class="cheesy-section">
+            <div class="cheesy-title">
+                <span>📜</span> little love notes <span>💞</span>
+            </div>
+            <ul class="gombal-list">
+                <li>kamu tuh kayak tanaman, setiap hari aku siram pujian biar tambah cantik 🌱💗</li>
+                <li>kalau kamu jadi bunga, aku milih jadi tanah — setia di bawah dan bikin kamu tumbuh bareng aku 🌻🤍</li>
+                <li>aku gak butuh pupuk, aku cuma butuh senyum kamu biar hari-hari mekar 🌼🥺</li>
+                <li>kamu itu kayak plantine day: istimewa, langka, dan selalu bikin betah 💘🌷</li>
+                <li>tanpa kamu, hatiku layu — disiram air mineral dan cinta kamu, jadi segar lagi 💧❤️</li>
+            </ul>
+        </div>
+
+        <!-- footer gombal manis -->
+        <div class="footer-note">
+            <p>🌸 <span>for my forever plantine</span> 🌸</p>
+            <p><span class="heart-beat">❤️</span> 14.02 · always urs <span class="heart-beat">❤️</span></p>
+        </div>
+
+        <!-- hidden little message (versi kecil) -->
+        <div style="text-align: center; margin-top: 0.8rem; font-size: 0.9rem; color: #b35f6e; opacity: 0.7; letter-spacing: 1px;">
+            ⛅  planted with love, grown with kisses   ⛅
+        </div>
+    </main>
+
+    <!-- tambahan floating biar aesthetic -->
+</body>
+</html>
